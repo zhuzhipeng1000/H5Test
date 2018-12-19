@@ -1,0 +1,79 @@
+scrolltop和offsettop
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<style>
+    div{
+        background-color: green;
+    }
+</style>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+ 
+ </HEAD>
+
+ <BODY style="border:1px red solid;padding:20px;margin:0px;">
+ <div id="div1" style="border:1px blue solid;height:400px;width:200px;overflow:auto">
+ <iframe id="iframe1" src="images/05.jpg" width="400" height="500" style="border:1px red solid;" scrolling="no">
+ </iframe>
+ </div>
+ <input type="button" value="OK" onclick="test()"/>
+ </BODY>
+ <SCRIPT LANGUAGE="JavaScript">
+      var oIframe = document.getElementById("iframe1");
+      oIframe.attachEvent("onClick",function(){
+          this.style.backGroundColor="red";
+      })
+      oIframe.addEventListener("click",function(){
+
+      },false)
+ var mm=  Number(oIframe.offsetTop);
+ var hh=["fafa","fafada"];
+ hh.push("kk",2);
+ hh[4]="ff";
+ hh.join(",");
+ hh.sort(function(a,b){
+     return a>b;
+ });
+ hh.concat("r","m");
+  hh.concat(["r","m"]);
+  hh.slice(-3,-2);
+  console.log(hh);
+  hh.splice(2,1)
+  console.log(hh);
+  hh.splice(2,0,"l","w");
+  console.log(hh);
+  hh.pop();
+  hh.unshift();
+  hh.shift();
+  hh.concat();
+  
+//  hopely  you have the experence   in DeskTops  that is much more  im 
+
+
+ var gg= hh.toString();
+
+ for(var k=0,total=hh.length;k<total;k++){
+  if(hh[k]===undefined){
+
+  }
+ }
+ if("kk" in hh){
+
+
+ }
+
+ hh.reverse();
+ hh.length=0;
+ hh.splice()
+ console.log(hh);
+ function test(){
+  var oIframe = document.getElementById("iframe1");
+  console.log(oIframe.offsetTop);
+  console.log(oIframe.scrollTop);
+ }
+  //-->
+  </SCRIPT>
+</HTML>
+<script type="text/javascript" ></script>

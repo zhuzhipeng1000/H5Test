@@ -1,0 +1,10 @@
+<template>
+  <mycomponent id='mycomponent'></mycomponent>
+</template>
+<script>
+  module.exports = {
+    created: function() {
+      this.$el('mycomponent').focus();
+    }
+  }
+</script>

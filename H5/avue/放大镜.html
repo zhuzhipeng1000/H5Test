@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<style>
+  /* .box{
+    width: 350px;
+     display: inline-block;
+      height: 350px;
+            margin:100px;
+            border: 100px solid #ccc;
+            position: relative;
+  } */
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+  .master{
+    opacity: 0.3;
+    background-color: lightgray;
+    border: 0.5  block red;
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    /* display: none; */
+    /* z-index: 10; */
+  }
+  #big{
+
+    top: 0px;
+    left: 500px;
+    display: block;
+    overflow: hidden;
+    position:absolute;
+    border: 1px block red;
+  }
+  #kk{
+
+  vertical-align: top;
+ 
+  }
+
+</style>
+<body>
+<div class="box" style="display:block">
+ <img src="images/01.jpg" alt=""/> 
+ <div class="master"></div>
+ <div id="big" style="position:absolute;width:60px;height:60px">
+<img src="images/01.jpg" id="kk"> </img>
+</div>
+</div>
+
+</body>
+<script>
+  var  vid=document.getElementsByClassName('master')[0];
+  var  imv=document.images[0];
+  var box=document.getElementsByClassName('box')[0];
+  var big=document.getElementById("kk");
+   big.style.width=600+"px";
+   big.style.height=100+"px";
+  //  vid.style.width=20+"px";
+  //  vid.style.height=20+"px";
+  imv.onmousemove=function(e){
+  //  vid.style.display="block";
+   
+   vid.style.left = e.pageX -document.getElementsByClassName('box')[0].offsetLeft-box.clientLeft +"px";
+   vid.style.top =e.pageY -document.getElementsByClassName('box')[0].offsetTop-box.clientLeft+ "px";
+
+  //  big.style.display="block";
+   big.style.marginLeft=vid.offsetLeft*3+"px";
+  big.style.marginTop=vid.offsetTop*3+"px";
+  }
+// imv.onmouseleave=function(){
+// big.style.display="none";
+// vid.style.display="none";
+
+// }
+
+</script>
+</html>

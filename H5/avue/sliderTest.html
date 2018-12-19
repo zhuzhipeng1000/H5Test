@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head> head</head>
+<style type="text/css">
+    
+ 
+ .para2 {
+   width: 180px;  
+   height: 180px;
+   background-color: green;
+   margin: 0px, auto;
+ }
+ .para3 {
+   width: 90px;
+   height: 90px;
+    background-color: blue;
+    opacity:0.4;
+    float: right;
+ }
+ button .left{
+  position:  absolute;
+  left: 50px;
+  top: 120px;
+ }
+ button .rightBt{
+  position:  absolute;
+  right:  50px;
+  top: 120px;
+ }
+
+    body,ul,ol,li,img{margin:0;padding:0;list-style:none;}
+    #box{width:490px;height:170px;padding:5px;
+      border:1px solid #ccc;margin:100px auto 0;overflow:hidden;}
+    .ad{width:490px;height:170px;overflow:hidden;position:relative;}
+    #box img{width:490px;}
+
+
+</style>
+<body>
+<p> this is Original Pragraph</p>
+<p> this is Second Pragraph</p>
+<button name="leftBt"> 向左</button>
+<div id="box">
+  <div class="ad">
+ <img src="images/01.jpg" name="para1" id="aaaa">
+ </div>
+ </div>
+<button name="rightBt"> 向右</button>
+<div class="box" style="background-color: red"></div>
+<div id="box" class="all">
+  <div class="ad">
+    <ul id="imgs">
+      <li><img src="images/01.jpg" /></li>
+    </ul>
+  </div>
+  <div id="arr"><span id="left"><</span><span id="right">></span></div>
+</div>
+</body>
+<script type="text/javascript">
+var bt1= document.getElementsByTagName("button")[0];
+var img= document.getElementById("aaaa");
+var k=0;
+setInterval(function(){
+   k++;
+   var f=k%4+1;
+img.src=("images/0" + f+".jpg");
+  texthtml
+  innertext
+
+},1000);
+
+bt1.addEventListener("click",function(){
+  // body...
+   
+  console.log("leftBt click");
+})
+
+  
+</script>>
+</html>
+

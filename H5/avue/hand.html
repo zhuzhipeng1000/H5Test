@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FrameSet Example</title>
+   
+    
+</head>
+<style>
+  *{
+    margin: 10px;
+
+    border: 10px 
+  }
+  div{
+    background-color: red;
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    position: relative;
+    left: 380px;
+    top: 90px;
+    position: absolute;
+  }
+  body{
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+    /* border: 20px dashed red; */
+  }
+  .box{
+      width: 700px;
+    height: 300px;
+
+  }
+</style>
+
+<body> 
+  <div class="box" id="mmmmm">
+  <div id="mmm"> aaa</div>
+  </div>
+</body>
+<script type="text/javascript">
+  var mm="akfa";
+  mm.replace()
+      var k=  document.getElementById("mmm");
+ var box=  document.getElementById("mmmmm");
+      // k.parentNode.removeChild(k);
+      // k.parentNode.replaceChild(k);
+      // k.childNodes;
+      // var kk=document.createElement()
+      
+
+      function mouseposition(e){
+        // if(e.pageX||e.pageY){
+        //   console.log(e.pageX+'a'+e.pageY);
+        //   return{x:e.pageX,y:e.pageY}
+           
+        // }
+        
+        // console.log(document.body.clientLeft+'aaa'+document.body.clientTop);
+        return{x:e.clientX+document.body.scrollLeft-document.body.clientLeft,
+        y:e.clientY+document.body.scrollTop-document.body.clientTop};//clientTop
+       
+      } 
+      box.onmousemove = mouseMove;
+function mouseMove(ev){
+ ev = ev || window.event;
+ var mousePos = mouseposition(ev);
+ animate(k,mousePos)
+   k.style.left = k.offsetLeft+( mousePos.x - k.offsetLeft)+ "px"
+      k.style.top =mousePos.y+ "px"
+}
+function animate(e,k){
+  
+  // number(e.style.left);
+ clearInterval(e.timer);
+  // （e.style.left) -k.left
+  e.timer= setInterval(function(){
+    console.log(e.offsetLeft+"e.offsetLeft"+e.offsetTop+"e.offsetTop");
+    var stepx =k.x-e.offsetLeft;
+   var stepy =k.y-e.offsetTop;
+  var  Xlength=stepx>0?10:-10;
+ if(Math.abs(stepx)<10){
+   Xlength=k.y-e.offsetTop;
+ }
+  // var  ylength=stepy>0?10:-10; 
+  //  if(Math.abs(stepx)>Math.abs(stepy)){
+  var  ylength=(stepy/stepx)*Xlength;
+   console.log(stepx+"stepx"+stepy+"stepy");
+  //  }else{
+  //    Xlength=(Math.abs(stepx)/Math.abs(stepy))*Xlength;
+  //  }
+    if(Math.abs(stepx)<10){
+       e.style.left=(e.offsetLeft + stepx) +"px";
+      e.style.top= (e.offsetTop+ stepy)+"px";
+      clearInterval(e.timer);
+      }else{
+         e.style.left=(e.offsetLeft+ Xlength) +"px";
+        e.style.top= (e.offsetTop+ ylength)+"px";
+      }
+   },500);
+
+   }
+
+      
+      
+
+    </script>
+</html>

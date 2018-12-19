@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head> head</head>
+<script src="jquery.js"></script>
+<style>
+  .bbb{
+   width: 60px;
+   height: 40px;
+   overflow: scroll;
+   overflow-x: hidden;
+   word-break:break-all;
+  }
+</style>
+<body>
+<p class="aaa"> this is Original Pragraph</p>
+<p class="bbb"> this is Original Pragrapabfajkwfbak fjkbawjkfbjkawbfjkbawjkbfjawbjkfbawjkbfjkawbjfkbawjkbfjkawbjfbawjbfjkabwfjbawjfbkawbfjkbawjkfbawbfkbawbfajwkh</p>
+<p> this is Second Pragraph</p>
+<h3> i  like  H5</h3> 
+<button class="ajAX"> this  is Ajax test </button>
+<button class="ajAXLoad"> this  is Ajax load </button>
+<form id="myForm">
+  <input type="text" name="">
+  <select name="myChoose">
+  <option value="myChoose1"> myChoose1</option>
+  <option value="myChoose2"> myChoose1</option>
+  <option value="myChoose3"> myChoose1</option>
+</select>
+<input type="file" name="myFile">
+</form>
+</body>
+<script type="text/javascript">
+  
+console.log(document.getElementsByTagName("*"));
+console.log(document.forms.myForm)
+console.log(document.body);
+console.log(document.head);
+console.log(document.childNodes[0].childNodes[1]+ document.firstChild);
+var request = new XMLHttpRequest();
+request.open("GET","http://www.baidu.com");
+request.setRequestHeader("content-Type","text/plain");
+
+// request.onreadystatechange=function(){
+//   if (request.readyState===4 && request.status===200) {
+//     var type=request.getResponseHeader("content-Type");
+//     if (type.match(/^text/)) {
+//       console.log(request.responseText);
+//     }
+
+//   }else{
+//     throw new Error(request.statusText);
+//   }
+// }
+request.send(null);
+$(document).ready(function(){
+$("#aaa").attr("color","green");
+$("p").css("color","green");
+ var  mm=$()
+ $("p").append("<button  id='kk' onclick='document.getElementById(\"kk\").style.color=\"red\"'> abutton </button>");
+ $("h3").before("<hr/>");
+ $(".ajAX").click(function(){
+  
+  console.log("test if this method did");
+
+ });
+ $(".ajAXLoad").click(function(){
+  
+  $(".ajAXLoad").load("formTest.html input");
+ })
+  var a="hfff";
+  console.log(typeof a == "String");
+console.log( a instanceof Object);
+
+var a = "iamstring.";
+var b = 222;
+var c= [1,2,3];
+var d = new Date();
+var e = function(){alert(111);};
+var f = function(){this.name="22";};
+console.log(typeof a == "string") 
+console.log( a instanceof String);
+
+});
+
+
+
+var kk= document.getElementsByClassName("aaa")[0];
+kk.style.color="red";
+</script>>
+</html>
+

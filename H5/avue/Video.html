@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <style>
+      video{
+          width: 80%;
+          height: 80%;
+      }
+      div{
+          width: 80px;
+          height: 60px;
+          background: red;
+      }
+
+</style>
+<script>
+    (function $(w){
+	var $= function(e){
+		 this.name=e;
+		 return new $.Prototype.init();
+	}
+			$.Prototype={
+       sayHello:function(){
+				 return this.name+"hello";
+			 },
+				init:function(){
+
+				},
+				
+
+			}
+			  $.extend =  function( obj ) {
+        for ( var key in obj ) {
+            this[ key ] = obj[ key ];
+                }
+    }
+		$.extend({
+
+        // 判断是不是html片段
+        isHTML: function( html ) {
+
+            // <.>
+            if( html.charAt(0) === '<' &&
+                    html.charAt( html.length - 1 ) === '>' &&
+                    html.length >= 3 ) {
+                return true;
+            }
+
+            return false;
+        },
+
+        // 判断是不是函数
+        isFunction: function( fn ) {
+
+            return typeof fn === 'function';
+        }})
+    
+
+    // 暴露工厂和工厂的简称
+    // w.a = w.$ = jQuery;
+	 
+	window.$=$;
+}(window))
+ 
+
+    function onDrage(e){
+        e.dateTransfer.setData("text",e.target.id);
+    }
+    $.isFunction(onDrage);
+    </script>
+<meta charset="utf-8">
+<!-- <video > -->
+    <!-- <source src="VID.mp4" type="video/mp4"> -->
+        <div draggable="true" on-drag="" ></div>
+        
+</html>
